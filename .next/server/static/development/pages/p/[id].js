@@ -1,7 +1,7 @@
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
-/******/ 	var installedModules = require('../../../ssr-module-cache.js');
+/******/ 	var installedModules = require('../../../../ssr-module-cache.js');
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1869,10 +1869,10 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/p/[id].js":
+/*!*************************!*\
+  !*** ./pages/p/[id].js ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1880,133 +1880,76 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/wesleybonneville/workspace/nextjstest/pages/index.js";
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/MyLayout */ "./components/MyLayout.js");
+var _jsxFileName = "/Users/wesleybonneville/workspace/nextjstest/pages/p/[id].js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-
- // const indexPageContent = <p>Hello Next.js</p>;
-// export default function Index() {
-//   return (
-//     <div>
-//       <Layout content={indexPageContent}>
-//         <p>This is the home page</p>
-//       </Layout>
-//     </div>
-//   );
-// }
-// const PostLink = props => (
-//   <li>
-//     {/* query string parameter (a query param) */}
-//     {/* use string interpolation */}
-//     {/* /post?title=$ is the query */}
-//     {/* parameter = props.title */}
-//     {/* title is set as a prop below in PostLink */}
-//     <Link href={`/post?title=${props.title}`}>
-//       <a>{props.title}</a>
-//     </Link>
-//   </li>
-// );
-// export default function Blog() {
+ // export default function Post() {
+//   const router = useRouter();
 //   return (
 //     <Layout>
-//       <h1>My Blog</h1>
-//       <ul>
-//         <PostLink title="Hello Next.js" />
-//         <PostLink title="Learn Next.js is awesome" />
-//         <PostLink title="Deploy apps with Zeit" />
-//       </ul>
-//     </Layout>
-//   );
-// }
-// const PostLink = props => (
-//   // dynamic routing
-//   <li>
-//     <Link href="/p/[id]" as={`/p/${props.id}`}>
-//       <a>{props.id}</a>
-//     </Link>
-//   </li>
-// );
-// export default function Blog() {
-//   return (
-//     <Layout>
-//       <h1>My Blog</h1>
-//       <ul>
-//         <PostLink id="hello-nextjs" />
-//         <PostLink id="learn-nextjs" />
-//         <PostLink id="deploy-nextjs" />
-//       </ul>
+//       <h1>{router.query.id}</h1>
+//       <p>This is the blog post content.</p>
 //     </Layout>
 //   );
 // }
 
-const Index = props => __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+const Post = props => __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 65
+    lineNumber: 16
   },
   __self: undefined
 }, __jsx("h1", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 66
+    lineNumber: 17
   },
   __self: undefined
-}, "Batman TV Shows"), __jsx("ul", {
+}, props.show.name), __jsx("p", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 67
+    lineNumber: 18
   },
   __self: undefined
-}, props.shows.map(show => __jsx("li", {
-  key: show.id,
+}, props.show.summary.replace(/<[/]?[pb]>/g, "")), props.show.image ? __jsx("img", {
+  src: props.show.image.medium,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 69
+    lineNumber: 19
   },
   __self: undefined
-}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-  href: "/p/[id]",
-  as: `/p/${show.id}`,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 70
-  },
-  __self: undefined
-}, __jsx("a", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 71
-  },
-  __self: undefined
-}, show.name))))));
+}) : null);
 
-Index.getInitialProps = async function () {
-  const res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3___default()("https://api.tvmaze.com/search/shows?q=batman");
-  const data = await res.json();
-  console.log(`Show data fetched. Count: ${data.length}`);
+Post.getInitialProps = async function (context) {
+  // context object contains a query object
+  // destructuring. get id from query
+  const {
+    id
+  } = context.query;
+  const res = await fetch(`https://api.tvmaze.com/shows/${id}`);
+  const show = await res.json();
+  console.log(`Fetched show: ${show.name}`);
   return {
-    shows: data.map(entry => entry.show)
+    show
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Index);
+/* harmony default export */ __webpack_exports__["default"] = (Post);
 
 /***/ }),
 
-/***/ 3:
-/*!******************************!*\
-  !*** multi ./pages/index.js ***!
-  \******************************/
+/***/ 4:
+/*!*******************************!*\
+  !*** multi ./pages/p/[id].js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/wesleybonneville/workspace/nextjstest/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/wesleybonneville/workspace/nextjstest/pages/p/[id].js */"./pages/p/[id].js");
 
 
 /***/ }),
@@ -2066,14 +2009,14 @@ module.exports = require("core-js/library/fn/weak-map");
 
 /***/ }),
 
-/***/ "isomorphic-unfetch":
-/*!*************************************!*\
-  !*** external "isomorphic-unfetch" ***!
-  \*************************************/
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("isomorphic-unfetch");
+module.exports = require("next/router");
 
 /***/ }),
 
@@ -2133,4 +2076,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=[id].js.map
