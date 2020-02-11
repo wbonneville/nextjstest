@@ -3,10 +3,10 @@ import Link from "next/link";
 export default function Index() {
   return (
     <div>
+      <p>This is the home page</p>
       <Link href="/about">
-        <a>About Page</a>
+        <a>About</a>
       </Link>
-      <p>Hello Next.js</p>
     </div>
   );
 }
