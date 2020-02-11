@@ -1,12 +1,9 @@
-import Link from "next/link";
+import Layout from "../components/MyLayout";
 
 export default function About() {
   return (
-    <div>
+    <Layout>
       <p>This is the about page</p>
-      <Link href="/">
-        <a>Home</a>
-      </Link>
-    </div>
+    </Layout>
   );
 }
