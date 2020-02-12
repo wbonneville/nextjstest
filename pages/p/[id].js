@@ -60,7 +60,7 @@ And here's the content.
 
         .markdown a {
           text-decoration: none;
-          color: blue;
+          color: purple;
         }
 
         .markdown a:hover {
